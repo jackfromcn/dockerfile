@@ -7,7 +7,7 @@ RUN apt-get update \
 # set time zone
 RUN echo "Asia/Shanghai" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 # install hexo
-RUN wget https://nodejs.org/download/release/v12.14.0/node-v12.14.0-linux-x64.tar.xz \ 
+RUN wget -q https://nodejs.org/download/release/v12.14.0/node-v12.14.0-linux-x64.tar.xz . \ 
     | tar -xf \
     && mv node-v12.14.0-linux-x64 nodejs \
     && rm -rf /usr/local/bin/nodejs /usr/local/bin/node /usr/local/bin/npm \
