@@ -1,7 +1,7 @@
 FROM node:slim
 MAINTAINER xuwencheng jack2411314@vip.qq.com
 # instal basic tool 
-RUN apt-get update && apt-get install -y git ssh-client ca-certificates --no-install-recommends && rm -r /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y wget git ssh-client ca-certificates --no-install-recommends && rm -r /var/lib/apt/lists/*
 # set time zone
 RUN echo "Asia/Shanghai" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 # install hexo
