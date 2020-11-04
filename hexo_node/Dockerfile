@@ -1,4 +1,4 @@
-FROM node:slim
+FROM ubuntu:16.04
 MAINTAINER xuwencheng jack2411314@vip.qq.com
 # instal basic tool 
 RUN apt-get update \
