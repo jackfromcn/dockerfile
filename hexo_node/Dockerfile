@@ -8,9 +8,8 @@ RUN apt-get update \
 RUN echo "Asia/Shanghai" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 # install hexo
 WORKDIR /root
-RUN wget -q https://nodejs.org/download/release/v12.14.0/node-v12.14.0-linux-x64.tar.xz -O /root/node-v12.14.0-linux-x64.tar.xz \ 
-    && tar -xf node-v12.14.0-linux-x64.tar.xz  \
-    && mv node-v12.14.0-linux-x64 nodejs \
+ADD node-v12.14.0-linux-x64.tar.xz .
+RUN mv node-v12.14.0-linux-x64 nodejs \
     && rm -rf /root/node-v12.14.0-linux-x64.tar.xz /usr/local/bin/nodejs /usr/local/bin/node /usr/local/bin/npm \
     && mv nodejs /usr/local/bin \
     && ln -s /usr/local/bin/nodejs/bin/node /usr/local/bin/ \
